@@ -13,9 +13,9 @@ const App = () => {
   console.log(currentRoom);
   const ProtectedRoute = ({ children }) => {
     if (currentRoom) {
-      return <HomePage/>
-    }else{
-      return <JoinRoom/>
+      return <HomePage />;
+    } else {
+      return <JoinRoom />;
     }
   };
   return (
@@ -23,15 +23,9 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/">
-            <Route
-              index
-              element={
-                  <ProtectedRoute></ProtectedRoute>
-              }
-            />
+            <Route index element={<ProtectedRoute></ProtectedRoute>} />
             <Route path="CreateRoom" element={<CreateRoom />} />
             <Route path="JoinRoom" element={<JoinRoom />} />
-            
           </Route>
         </Routes>
       </BrowserRouter>
