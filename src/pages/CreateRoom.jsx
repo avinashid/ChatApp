@@ -9,6 +9,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
+import { Link } from "react-router-dom";
 
 const CreateRoom = () => {
   let [err, setErr] = useState();
@@ -96,7 +97,7 @@ const CreateRoom = () => {
           <button type="submit">Create Room</button>
           {err && <span>`Something Went Wrong {err}`</span>}
         </form>
-        <p>Already have a room ? Join.</p>
+        <p>Already have a room ? <Link to='/JoinRoom'>Join</Link></p>
       </div>
     </div>
   );
