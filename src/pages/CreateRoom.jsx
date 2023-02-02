@@ -97,7 +97,7 @@ const CreateRoom = () => {
           <button type="submit">Create Room</button>
           {err && <span>`Something Went Wrong {err}`</span>}
         </form>
-        <p>Already have a room ? <Link to='/JoinRoom'>Join</Link></p>
+        <p>Already have a room ? <Link to='/ChatApp/JoinRoom'>Join</Link></p>
       </div>
     </div>
   );

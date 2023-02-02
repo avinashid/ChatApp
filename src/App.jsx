@@ -22,7 +22,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/">
+          <Route path="/ChatApp/">
             <Route index element={<ProtectedRoute></ProtectedRoute>} />
             <Route path="CreateRoom" element={<CreateRoom />} />
             <Route path="JoinRoom" element={<JoinRoom />} />

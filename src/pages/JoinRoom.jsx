@@ -14,7 +14,7 @@ const JoinRoom = () => {
     try{
       await signInWithEmailAndPassword(auth,`${roomName}@chatApp.com`,password);
 
-      navigate("/")
+      navigate("/ChatApp/")
     }catch(err){
       setErr(err.message)
     }
@@ -31,7 +31,7 @@ const JoinRoom = () => {
   
             </form>
             <p>
-              Don't have a room ? <Link to="/CreateRoom">Create</Link>
+              Don't have a room ? <Link to="/ChatApp/CreateRoom">Create</Link>
             </p>
             <span>{err}</span>
         </div>
