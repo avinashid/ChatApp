@@ -4,7 +4,7 @@ import CreateRoom from "./pages/CreateRoom";
 import JoinRoom from "./pages/JoinRoom";
 import HomePage from "./pages/HomePage";
 import "./Style.scss";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, HashRouter } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 
@@ -20,7 +20,7 @@ const App = () => {
   };
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/ChatApp/">
             <Route index element={<ProtectedRoute></ProtectedRoute>} />
@@ -28,7 +28,7 @@ const App = () => {
             <Route path="JoinRoom" element={<JoinRoom />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 };
