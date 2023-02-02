@@ -22,7 +22,7 @@ const App = () => {
     <>
       <HashRouter>
         <Routes>
-          <Route path="/ChatApp/">
+          <Route path="/">
             <Route index element={<ProtectedRoute></ProtectedRoute>} />
             <Route path="CreateRoom" element={<CreateRoom />} />
             <Route path="JoinRoom" element={<JoinRoom />} />
