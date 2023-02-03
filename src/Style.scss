@@ -5,6 +5,12 @@
     --extra:rgba(33, 195, 152, 0.685);
 }
 
+@media only screen and (max-width: 767px) {
+    body {
+      margin: 0;
+      height:100vh;
+    }
+}
 .formContainer{
 
     
@@ -61,5 +67,106 @@
             }
         }
 
+    }
+}
+
+.homePage{
+    display: flex;
+    height:calc(100vh - 20px);
+    border-radius: 20px;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: space-between;
+    // padding:10px;
+    .navbar{
+        display:flex;
+        flex-direction: row;
+        background:var(--mid-dark);
+        margin:0px;
+        height:30px;
+        padding: 10px;
+        align-items: center;
+        justify-content: space-between;
+        .roomName{
+            font-weight: 800;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+    }
+    .chatInput{
+        margin:0px;
+        justify-content: space-between;
+        display:flex;
+        flex-direction: row;
+        color:black;
+        background-color: white;
+        padding:10px;
+        margin:0;
+        input{
+            width:80%;
+            background-color: white;
+            border: 0px;
+            color:black;
+            outline:none;
+        }
+        .sendIcon{
+            cursor: pointer;
+        }
+    }
+    .chatSection{
+        overflow: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        gap:5px;
+        padding:10px;
+        height:calc(100%);
+        background-color: aqua;
+        .chat{
+            
+            display: flex;
+            flex-direction:column;
+            width: fit-content;
+            max-width: 80%;
+            word-wrap:break-word;
+            gap:2px;
+            .chatUser{
+                color: var(--dark-color);
+                padding: 0px 5px 0px 5px;
+                width: fit-content;
+                border-radius: 10px;
+                font-size: 10px;
+                background-color:gainsboro;
+            }
+            .chatMessage{
+                padding:4px 10px;
+                border-radius: 15px 15px 15px 0px;
+                background-color: var(--dark-color);
+            }
+
+        }
+        .chatR{
+            display: flex;
+            flex-direction: column;
+            margin:0 0 0 auto;
+            word-wrap:break-word;
+            width:fit-content;
+            max-width: 80%;
+            gap:2px;
+            .chatUser{
+                color: var(--dark-color);
+                padding: 0px 5px 0px 5px;
+                border-radius: 10px;
+                font-size: 10px;
+                background-color:gainsboro;
+                width: fit-content;
+                margin:0 0 0 auto;
+            }
+            .chatMessage{
+                margin:0 0 0 auto;
+                padding:4px 10px;
+                border-radius: 15px 15px 0px 15px;
+                background-color: var(--extra);
+            }
+        }
+        
     }
 }
