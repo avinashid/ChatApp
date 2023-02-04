@@ -20,7 +20,10 @@ const CreateRoom = () => {
     const password = e.target[1].value;
     const confirmPassword = e.target[2].value;
     const file = e.target[3].files[0];
-    console.log(e.target[3].value);
+    if(password!==confirmPassword){
+      setErr("Password Mismatch");
+      return false;
+    }
     try {
       const res = await createUserWithEmailAndPassword(
         auth,
@@ -58,8 +61,8 @@ const CreateRoom = () => {
   return (
     <div className="formContainer">
       <div className="formWrapper">
-        <span className="logo">ChatApp</span>
-        <span className="title">Create Room</span>
+        <div className="logo">ChatApp</div>
+        <div className="title">Create Room</div>
         <form onSubmit={handleSubmit}>
           <input type="text" name="" id="" placeholder="Room Name" required />
           <input
@@ -95,9 +98,9 @@ const CreateRoom = () => {
             }
           />
           <button type="submit">Create Room</button>
-          {err && <span>`Something Went Wrong {err}`</span>}
         </form>
         <p>Already have a room ? <Link to='/JoinRoom'>Join</Link></p>
+          {err && <span>{err}</span>}
       </div>
     </div>
   );

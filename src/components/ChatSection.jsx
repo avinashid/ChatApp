@@ -1,4 +1,4 @@
-import React, {useRef,useEffect}from "react";
+import React, { useRef, useEffect } from "react";
 import Chat from "./Chat";
 
 const ChatSection = () => {
@@ -10,11 +10,11 @@ const ChatSection = () => {
   return (
     <div className="chatSection">
       <div ref={chatContainerRef}></div>
-      <Chat userName = "UserName" message = "Message"/>
-      <Chat userName = "UserName" message = "Message"/>
-      <Chat userName = "UserName" message = "Message"/>
-      <Chat userName = "UserName" message = "Message"/>
-      <Chat userName = "UserName" message = "Message"/>
+      <Chat userName="UserName" message="Message" />
+      <Chat userName="UserName" message="Message" />
+      <Chat userName="UserName" message="Message" />
+      <Chat userName="UserName" message="Message" />
+      <Chat userName="UserName" message="Message" />
     </div>
   );
 };

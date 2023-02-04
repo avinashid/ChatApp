@@ -22,8 +22,8 @@ const JoinRoom = () => {
   return (
     <div className="formContainer">
         <div className="formWrapper">
-        <span className='logo'>ChatApp</span>
-        <span className="title">Join Room</span>
+        <div className='logo'>ChatApp</div>
+        <div className="title">Join Room</div>
             <form  action="" onSubmit={handleSubmit}>
                 <input type="text" name="" id="" placeholder='Room Name' required/>
                 <input type="password" name="" id="" placeholder='Room Password' required />
