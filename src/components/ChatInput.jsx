@@ -22,6 +22,7 @@ const ChatInput = () => {
       user:user,
       value:chat,
     });
+    setChat("")
   };
 
   return (
