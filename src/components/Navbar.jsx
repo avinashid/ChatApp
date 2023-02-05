@@ -5,7 +5,6 @@ import { AuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
   const currentRoom = useContext(AuthContext).currentRoom;
-  console.log(currentRoom);
   return (
     <div className="navbar">
         <div className="roomName" >{currentRoom.email}</div>

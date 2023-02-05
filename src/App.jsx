@@ -8,9 +8,12 @@ import {
   Route,
   HashRouter,
   useNavigate,
+  RouterProvider,
 } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
+import EnterName from "./pages/EnterName";
+
 
 const App = () => {
   return (
@@ -21,6 +24,7 @@ const App = () => {
             <Route index element={<ProtectedRoute />} />
             <Route path="CreateRoom" element={<CreateRoom />} />
             <Route path="JoinRoom" element={<JoinRoom />} />
+            <Route path="EnterName" element={<EnterName/>}/>
           </Route>
         </Routes>
       </HashRouter>
@@ -28,14 +32,22 @@ const App = () => {
   );
 };
 const ProtectedRoute = () => {
-  const { currentRoom } = useContext(AuthContext);
+  const { currentRoom,user } = useContext(AuthContext);
+  console.log(user)
   const navigate = useNavigate();
 
   if (!currentRoom) {
     navigate("/JoinRoom");
     return null;
   }
-  return <HomePage />;
+  else{
+    if(!user){
+      navigate("/EnterName");
+    }else{
+      return <HomePage/>
+    }
+  }
+  return <HomePage/>
 };
 
 export default App;

@@ -12,8 +12,6 @@
     }
 }
 .formContainer{
-
-    
     vertical-align: center;
     display: flex;
     align-items: center;
@@ -80,7 +78,7 @@
 
 .homePage{
     display: flex;
-    height:calc(100vh - 20px);
+    height:calc(100vh - 50px);
     border-radius: 20px;
     flex-direction: column;
     overflow: hidden;
@@ -177,4 +175,21 @@
         }
         
     }
+}
+.enterName{
+    flex-direction: column;
+    margin-top: 200px;
+    gap:10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height:200px;
+    background-color: var(--dark-color);
+    form{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+    }
+
 }
