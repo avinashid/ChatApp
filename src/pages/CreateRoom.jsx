@@ -9,10 +9,11 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CreateRoom = () => {
   let [err, setErr] = useState();
+  const navigate = useNavigate();
   let [profilePic, setProfilePic] = useState("Room Image");
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -52,8 +53,8 @@ const CreateRoom = () => {
           });
         }
       );
-      console.log(res);
-      setErr();
+      setErr("");
+      navigate("/EnterName")
     } catch (err) {
       setErr(err.message);
     }

@@ -1,20 +1,21 @@
-import React ,{useState}from 'react'
+import React ,{useContext, useState}from 'react'
 import { Navigate, useNavigate,Link } from 'react-router-dom';
 import { auth } from '../Firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { AuthContext } from '../context/AuthContext';
 
 const JoinRoom = () => {
   const [err,setErr]=useState("");
+  const {setUser} = useContext(AuthContext);
   const navigate = useNavigate();
   const handleSubmit=async (e)=>{
+    // await setUser("");
     e.preventDefault();
     const roomName = e.target[0].value;
     const password = e.target[1].value;
-
     try{
       await signInWithEmailAndPassword(auth,`${roomName}@chatApp.com`,password);
-
-      navigate("/")
+      navigate("/EnterName")
     }catch(err){
       setErr(err.message)
     }

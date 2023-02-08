@@ -14,7 +14,6 @@ import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import EnterName from "./pages/EnterName";
 
-
 const App = () => {
   return (
     <>
@@ -24,30 +23,24 @@ const App = () => {
             <Route index element={<ProtectedRoute />} />
             <Route path="CreateRoom" element={<CreateRoom />} />
             <Route path="JoinRoom" element={<JoinRoom />} />
-            <Route path="EnterName" element={<EnterName/>}/>
+            <Route path="EnterName" element={<EnterName />} />
           </Route>
         </Routes>
       </HashRouter>
     </>
   );
 };
-const ProtectedRoute = () => {
-  const { currentRoom,user } = useContext(AuthContext);
-  console.log(user)
+const ProtectedRoute =   () =>  {
+  const syncFunc = ()=>{
+    const { currentRoom,setUser } = useContext(AuthContext)
+    return [currentRoom,setUser]
+  }
+  const [currentRoom,setUser]=syncFunc();
   const navigate = useNavigate();
-
   if (!currentRoom) {
     navigate("/JoinRoom");
-    return null;
   }
-  else{
-    if(!user){
-      navigate("/EnterName");
-    }else{
-      return <HomePage/>
-    }
-  }
-  return <HomePage/>
+  else return <HomePage/>
 };
 
 export default App;
