@@ -86,7 +86,9 @@ const ChatInput = () => {
   return (
     <div className="chatInput">
       <input
+        autocomplete="off"
         ref={inputRef}
+        id="chatInput"
         value={chat}
         onChange={(e) => setChat(e.target.value)}
         type="text"
