@@ -11,7 +11,6 @@ export const AuthContextProvider = ({ children }) => {
   const [currentRoom, setCurrentRoom] = useState({});
   const [user,setUser] = useState(localStorage.getItem("uniqueUserChatApp"));
   localStorage.setItem("uniqueUserChatApp",user);
-  console.log(localStorage.getItem("uniqueUserChatApp"))
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (user) => {
       setCurrentRoom(user);
@@ -20,7 +19,7 @@ export const AuthContextProvider = ({ children }) => {
       unsub();
     };
   }, []);
-
+  
   return (
     <AuthContext.Provider value={{ currentRoom,user,setUser }}>
       {children}

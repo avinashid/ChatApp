@@ -114,8 +114,14 @@
             color:black;
             outline:none;
         }
-        .sendIcon{
+        .inputFunction{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
             cursor: pointer;
+            label{
+                cursor: pointer;
+            }
         }
     }
     .chatSection{
@@ -126,8 +132,11 @@
         padding:10px;
         height:calc(100%);
         background-color: aqua;
+        audio{
+            height:30px;
+         }
+        
         .chat{
-            
             display: flex;
             flex-direction:column;
             width: fit-content;
@@ -147,6 +156,8 @@
                 border-radius: 15px 15px 15px 0px;
                 background-color: var(--dark-color);
             }
+            
+            
 
         }
         .chatR{
@@ -171,6 +182,10 @@
                 padding:4px 10px;
                 border-radius: 15px 15px 0px 15px;
                 background-color: var(--extra);
+            }
+            .imageContainer{
+                width:300px;
+                border-radius: 20px;
             }
         }
         

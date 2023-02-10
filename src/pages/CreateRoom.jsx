@@ -31,7 +31,7 @@ const CreateRoom = () => {
         `${userName}@chatApp.com`,
         password
       );
-      const storageRef = ref(storage, "userName");
+      const storageRef = ref(storage, file.name);
 
       const uploadTask = uploadBytesResumable(storageRef, file);
       uploadTask.on(
@@ -65,18 +65,18 @@ const CreateRoom = () => {
         <div className="logo">ChatApp</div>
         <div className="title">Create Room</div>
         <form onSubmit={handleSubmit}>
-          <input type="text" name="" id="" placeholder="Room Name" required />
+          <input type="text" name="" id="RoomName" placeholder="Room Name" required />
           <input
             type="password"
             name=""
-            id=""
+            id="password"
             placeholder="Room Password"
             required
           />
           <input
             type="password"
             name=""
-            id=""
+            id="confirmPassword"
             placeholder="Confirm Password"
             required
           />

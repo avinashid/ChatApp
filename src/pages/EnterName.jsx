@@ -20,7 +20,7 @@ const navigate = useNavigate();
       <input
       required
         type="text"
-        id=""
+        id="nameValue"
         value={nameValue}
         onChange={(e) => setNameValue(e.target.value)}
       />

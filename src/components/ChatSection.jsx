@@ -13,23 +13,24 @@ const ChatSection = () => {
   useEffect(() => {
     scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
   }, [scrollRef]);
-  
-
 
   useEffect(() => {
     const chatRef = ref(realtimeDb, "chats/" + currentRoom.uid);
     onValue(chatRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
-        const newMessages = Object.keys(data).map((key) => {
-          return (
-            <Chat
-              key={key}
-              userName={data[key].user}
-              message={data[key].value}
-            />
-          );
-        }).reverse();
+        const newMessages = Object.keys(data)
+          .map((key) => {
+            return (
+              <Chat
+                key={key}
+                userName={data[key].user}
+                message={data[key].value}
+                type={data[key].type}
+              />                  
+            );
+          })
+          .reverse();
         setMessages(newMessages);
       }
     });
