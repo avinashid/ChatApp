@@ -86,7 +86,7 @@ const ChatInput = () => {
   return (
     <div className="chatInput">
       <input
-        autocomplete="off"
+        autoComplete="off"
         ref={inputRef}
         id="chatInput"
         value={chat}

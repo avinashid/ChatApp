@@ -22,7 +22,7 @@ const Chat = ({ userName, message, type }) => {
       break;
     case "image":
       text = <div className="imageContainer">
-        <img src={message}/>
+        <img className="imageContainer" src={message}/>
       </div>;
       break;
     default:
