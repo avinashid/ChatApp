@@ -26,7 +26,7 @@ const Chat = ({ userName, message, type }) => {
       </div>;
       break;
     default:
-      text = { message };
+      text = <div>{ message }</div>;
       break;
   }
   return (
