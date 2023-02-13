@@ -29,12 +29,15 @@ const ChatInput = () => {
         user: user,
         value: chat,
       });
-      setChat("");
     }
+    setChat("");
   };
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
+      console.log(event.target.value)
+      setChat(chat.trim());
       updateChats();
+      setChat("".trim());
     }
   };
   const addAudio = (e) => {
@@ -85,19 +88,22 @@ const ChatInput = () => {
   };
   return (
     <div className="chatInput">
-      <input
+      <textarea
+        wrap="soft"
+        rows={0}
+        cols={1}
         autoComplete="off"
         ref={inputRef}
         id="chatInput"
         value={chat}
-        onChange={(e) => setChat(e.target.value)}
+        onChange={(e) => e.target.value!=="\n"?setChat(e.target.value):setChat("")}
         type="text"
         placeholder="Message"
         onKeyDown={handleKeyPress}
       />
       <div className="inputFunction">
         <label htmlFor="audioFile">
-          <MdMusicNote />
+          <MdMusicNote className="inputIcon"/>
         </label>
         <input
           style={{ display: "none" }}
@@ -108,7 +114,7 @@ const ChatInput = () => {
           onChange={addAudio}
         />
         <label htmlFor="imageFile">
-          <MdAddPhotoAlternate />
+          <MdAddPhotoAlternate className="inputIcon" />
         </label>
         <input
           style={{ display: "none" }}
@@ -118,7 +124,7 @@ const ChatInput = () => {
           id="imageFile"
           onChange={addImage}
         />
-        <MdSend onClick={updateChats} className="sendIcon" />
+        <MdSend onClick={updateChats} className="sendIcon inputIcon" />
       </div>
     </div>
   );
