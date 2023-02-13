@@ -1,16 +1,39 @@
 :root{
     --dark-color:#1b0921;
     --mid-dark:#361142;
-    --light-color:sky;
+    --light-color:rgb(137, 202, 228);
     --extra:rgba(33, 195, 152, 0.685);
 }
-
-@media only screen and (max-width: 767px) {
-    body {
-        margin: 0;
-         height:90vh;
-    }
+button{
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.4em 1em;
+    font-size: 1em;
+    font-weight: 500;
+    background-color:var(--light-color);
+    cursor: pointer;
+    transition: ease-out 0.1s;
 }
+button:hover{
+    box-shadow: 2px 2px 2px var(--light-color);
+    background-color: var(--dark-color);
+    transition: ease-in 0.1s;
+    color: var(--light-color);
+}
+body{
+    display: flex;
+    justify-content: center;
+    width:100vw;
+    min-height: 100vh;
+    max-width: 600px;
+    margin:auto;
+    background-color: rgb(52, 29, 5);
+}
+// @media only screen and (max-width: 767px) {
+//     body {
+//         margin: 0;
+//     }
+// }
 .formContainer{
     vertical-align: center;
     display: flex;
@@ -75,27 +98,31 @@
 
     }
 }
-
 .homePage{
+    width: 100vw;
+    min-width: 300px;
+    max-width: 600px;
     display: flex;
-    height:calc(100vh - 50px);
+    height: 100vh;
     border-radius: 20px;
     flex-direction: column;
-    overflow: hidden;
-    justify-content: space-between;
-    // padding:10px;
+    
     .navbar{
+        background: rgb(27,9,33);
+background: linear-gradient(45deg, rgba(27,9,33,1) 11%, rgba(54,17,66,1)) ;
         display:flex;
         flex-direction: row;
-        background:var(--mid-dark);
-        margin:0px;
-        height:30px;
+        height:20px;
         padding: 10px;
         align-items: center;
+        border-bottom: 1px solid white;
         justify-content: space-between;
         .roomName{
+            
+            background-color:rgb(131,58,180);
+            background-color: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+            text-transform: capitalize;
             font-weight: 800;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
         }
     }
     .chatInput{
@@ -131,7 +158,8 @@
         gap:5px;
         padding:10px;
         height:calc(100%);
-        background-color: aqua;
+        background: rgb(238,174,202);
+background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
         audio{
             height:30px;
          }
@@ -160,7 +188,7 @@
                 width:300px;
                 border-radius: 20px;
             }
-            
+
 
         }
         .chatR{
