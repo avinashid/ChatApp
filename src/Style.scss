@@ -114,6 +114,7 @@ body{
     .navbar{
         max-width:calc(600px - 20px);
         position: absolute;
+        top:0px;
         width:calc(100vw - 20px);
         background: rgb(27,9,33);
 background: linear-gradient(45deg, rgba(27,9,33,1) 11%, rgba(54,17,66,1)) ;
