@@ -5,7 +5,7 @@
     --extra:rgba(33, 195, 152, 0.685);
 }
 button{
-    
+    box-shadow: 2px 2px 2px var(--dark-color);
     color: var(--light-color);
     border-radius: 8px;
     border: 1px solid transparent;
@@ -102,6 +102,7 @@ body{
     }
 }
 .homePage{
+    position: relative;
     width: 100vw;
     min-width: 300px;
     max-width: 600px;
@@ -111,10 +112,12 @@ body{
     flex-direction: column;
     
     .navbar{
+        max-width:calc(600px - 20px);
+        position: absolute;
+        width:calc(100vw - 20px);
         background: rgb(27,9,33);
 background: linear-gradient(45deg, rgba(27,9,33,1) 11%, rgba(54,17,66,1)) ;
         display:flex;
-        
         flex-direction: row;
         height:20px;
         padding: 10px;
@@ -134,7 +137,14 @@ background: linear-gradient(45deg, rgba(27,9,33,1) 11%, rgba(54,17,66,1)) ;
             font-family: 'Times New Roman', Times, serif;
         }
     }
+    .homeFooter{
+        max-width: 600px;
+        position: absolute;
+        bottom: 0px;
+        width: 100vw;
+    }
     .chatInput{
+        height:20px;
         margin:0px;
         align-items: center;
         justify-content: space-between;
@@ -192,13 +202,12 @@ background: linear-gradient(45deg, rgba(27,9,33,1) 11%, rgba(54,17,66,1)) ;
         flex-direction: column-reverse;
         gap:5px;
         padding:10px;
-        height:calc(100%);
+        height:calc(100% - 60px);
         background: rgb(238,174,202);
 background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
         audio{
             height:30px;
          }
-        
         .chat{
             display: flex;
             flex-direction:column;
