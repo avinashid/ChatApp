@@ -34,7 +34,6 @@ const ChatInput = () => {
   };
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
-      console.log(event.target.value)
       setChat(chat.trim());
       updateChats();
       setChat("".trim());
