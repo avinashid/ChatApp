@@ -102,7 +102,7 @@ body{
     }
 }
 .homePage{
-    position: relative;
+    // position: relative;
     width: 100vw;
     min-width: 300px;
     max-width: 600px;
@@ -113,8 +113,8 @@ body{
     
     .navbar{
         max-width:calc(600px - 20px);
-        position: fixed;
-        top:0px;
+        // position: fixed;
+        // top:0px;
         width:calc(100vw - 20px);
         background: rgb(27,9,33);
 background: linear-gradient(45deg, rgba(27,9,33,1) 11%, rgba(54,17,66,1)) ;
@@ -131,6 +131,7 @@ background: linear-gradient(45deg, rgba(27,9,33,1) 11%, rgba(54,17,66,1)) ;
             text-transform: capitalize;
             // background: -webkit-linear-gradient(#eee, #333);
             background: -webkit-linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+            background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
             font-weight: 900;
@@ -140,8 +141,8 @@ background: linear-gradient(45deg, rgba(27,9,33,1) 11%, rgba(54,17,66,1)) ;
     }
     .homeFooter{
         max-width: 600px;
-        position: absolute;
-        bottom: 0px;
+        // position: absolute;
+        // bottom: 0px;
         width: 100vw;
     }
     .chatInput{
@@ -209,16 +210,24 @@ background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 1
         audio{
             height:30px;
          }
+         .userAdd{
+            color:grey;
+            border-radius: 10px;
+            padding:0px 10px ;
+            font-size: smaller;
+            border: 1px solid grey;
+            display: flex;
+            justify-content: center;
+         }
         .chat{
-           
+            
             display: flex;
             flex-direction:column;
             width: fit-content;
             max-width: 80%;
             word-wrap:break-word;
             gap:2px;
-            .chatUser{
-                
+            .chatUser{  
                 color: var(--dark-color);
                 padding: 0px 5px 0px 5px;
                 width: fit-content;
@@ -241,6 +250,7 @@ background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 1
 
         }
         .chatR{
+            
             display: flex;
             flex-direction: column;
             margin:0 0 0 auto;
@@ -267,6 +277,7 @@ background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 1
                 width:300px;
                 border-radius: 20px;
             }
+            
         }
         
     }

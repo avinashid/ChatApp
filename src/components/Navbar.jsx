@@ -3,11 +3,20 @@ import { auth } from "../Firebase";
 import { signOut } from "firebase/auth";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { set } from "firebase/database";
+import { set ,push,ref} from "firebase/database";
+import { realtimeDb } from "../Firebase";
 
 const Navbar = () => {
-  const { currentRoom, setUser } = useContext(AuthContext);
+  const { currentRoom, setUser,user } = useContext(AuthContext);
+  console.log(currentRoom)
   const leaveFunction = async () => {
+    const postChatRef = ref(realtimeDb, "chats/" + currentRoom.uid);
+    const newChatRef = push(postChatRef);
+    set(newChatRef, {
+      type: "userAdd",
+      user: user,
+      value:"left the room.",
+    });
     await signOut(auth);
     setUser("");
   };

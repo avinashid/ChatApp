@@ -25,6 +25,9 @@ const Chat = ({ userName, message, type }) => {
         <img className="imageContainer" src={message}/>
       </div>;
       break;
+    case "userAdd":
+      text = <div className="userAdd">{message}</div>
+      break;
     default:
       text = <div>{ message }</div>;
       break;
